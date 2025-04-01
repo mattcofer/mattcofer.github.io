@@ -1,0 +1,37 @@
+<button id="cookModeBtn" type="button" style="position: fixed; top: 10px; right: 10px; z-index:9999;">Activate Cook Mode</button>
+<script>
+	const cookModeBtn = document.getElementById('cookModeBtn');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookModeBtn.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookModeBtn.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookModeBtn.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookModeBtn.style.display = "none";
+	}
+</script>
