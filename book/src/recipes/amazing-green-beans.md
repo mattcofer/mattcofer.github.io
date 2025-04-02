@@ -45,9 +45,9 @@ This was orginally inspired by the dish called Amazing Green Beans at Madam Mams
 ## Ingredients
 * 5 Thai chilies diced
 * 5 cloves of garlic minced
-* 1/2 sliced onion
-* 1/2 cup chopped green beans
-* 1 1/2 cup Thai basil roughly chopped
+* \\( \frac{1}{2} \\) sliced onion
+* \\( \frac{1}{2} \\) cup chopped green beans
+* 1 \\( \frac{1}{2} \\) cup Thai basil roughly chopped
 * 1 pound ground chicken
 
 ## Sauce
