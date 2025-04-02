@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Recipes - Matt Cofer</title>
+        <title>Amazing Green Beans - Pad Kra Pao - Matt Cofer</title>
 
 
         <!-- Custom HTML head -->
@@ -155,17 +155,86 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="recipes"><a class="header" href="#recipes">Recipes</a></h1>
+                        <h1 id="amazing-green-beans---pad-kra-pao"><a class="header" href="#amazing-green-beans---pad-kra-pao">Amazing Green Beans - Pad Kra Pao</a></h1>
+<p>This was orginally inspired by the dish called Amazing Green Beans at Madam Mams in Austin, Texas.  Traditionally, it is called Pad Kra Pao.  There are a few variations found on the web.  Here are some.  This recipe is mostly based on the first one.</p>
+<ul>
+<li><a href="https://hot-thai-kitchen.com/holy-basil-stir-fry/">https://hot-thai-kitchen.com/holy-basil-stir-fry/</a></li>
+<li><a href="https://hot-thai-kitchen.com/pad-kra-pao-beef/#recipe">https://hot-thai-kitchen.com/pad-kra-pao-beef/#recipe</a></li>
+<li><a href="https://thewoksoflife.com/pad-kra-pao/#recipe">https://thewoksoflife.com/pad-kra-pao/#recipe</a></li>
+</ul>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="ingredients"><a class="header" href="#ingredients">Ingredients</a></h2>
+<ul>
+<li>5 Thai chilies diced</li>
+<li>5 cloves of garlic minced</li>
+<li>1/2 sliced onion</li>
+<li>1/2 cup chopped green beans</li>
+<li>1 1/2 cup Thai basil roughly chopped</li>
+<li>1 pound ground chicken</li>
+</ul>
+<h2 id="sauce"><a class="header" href="#sauce">Sauce</a></h2>
+<ul>
+<li>1 Tablespoon Oyster Sauce</li>
+<li>1 Tablespoon Thin or Light Soy Sauce</li>
+<li>2 Teaspoons Fish Sauce</li>
+<li>1 1/2 Teaspoon Black Soy Sauce</li>
+<li>2 Teaspoons Sugar</li>
+<li>2 Tablespoons water</li>
+</ul>
+<h2 id="instructions"><a class="header" href="#instructions">Instructions</a></h2>
+<ul>
+<li>Sauté garlic and chili</li>
+<li>Add chicken, cook and break apart until almost done</li>
+<li>Add sliced onions and chopped green beans, cook for a minute or two</li>
+<li>Add sauce, cook until desired tenderness</li>
+<li>Add roughly chopped Thai basil</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../recipes/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../recipes/amazing-green-beans.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../recipes/chicken-fried-rice.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -175,11 +244,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../recipes/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../recipes/amazing-green-beans.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../recipes/chicken-fried-rice.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
