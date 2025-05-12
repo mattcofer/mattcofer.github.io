@@ -398,6 +398,202 @@
 <ul>
 <li>Season meat ahead of time, apply sauce while grilling pork</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collard-greens"><a class="header" href="#collard-greens">Collard Greens</a></h1>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="ingredients-4"><a class="header" href="#ingredients-4">Ingredients</a></h2>
+<ul>
+<li>1 Tablespoon oil</li>
+<li>4 pieces of bacon diced</li>
+<li>1/2 sweet onion diced</li>
+<li>3 gloved mined garlic</li>
+<li>2 large bunches of collard greens</li>
+<li>2 cups of chicken stock</li>
+<li>1/2 Teaspoon salt</li>
+<li>1/4 Teaspoon pepper</li>
+<li>1-2 Teaspoon red pepper flakes</li>
+<li>2 Teaspoons apple cider vinegar</li>
+</ul>
+<h2 id="instructions-4"><a class="header" href="#instructions-4">Instructions</a></h2>
+<ul>
+<li>Wash and cut collards into 1" strips.  Remove largest parts of stem.</li>
+<li>Render bacon, set aside.</li>
+<li>Saute onion</li>
+<li>Saute garlic</li>
+<li>Add everything else</li>
+<li>Simmer until done (about an hour)</li>
+<li>Add cooked bacon</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="waffles"><a class="header" href="#waffles">Waffles</a></h1>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="dry-ingredients"><a class="header" href="#dry-ingredients">Dry Ingredients</a></h2>
+<ul>
+<li>2 cups flour</li>
+<li>1 Teaspoon salt</li>
+<li>4 Teaspoons baking powder</li>
+<li>2 Tablespoons sugar</li>
+</ul>
+<h2 id="wet-ingredients"><a class="header" href="#wet-ingredients">Wet Ingredients</a></h2>
+<ul>
+<li>2 large eggs</li>
+<li>1 1/2 cup warm milk</li>
+<li>1/3 cup melted butter</li>
+<li>1 Teaspoon vanilla extract</li>
+</ul>
+<h2 id="instructions-5"><a class="header" href="#instructions-5">Instructions</a></h2>
+<ul>
+<li>Combine wet ingredients, whisk to scramble the eggs</li>
+<li>Combine dry ingredients, stir</li>
+<li>Mix everything together</li>
+</ul>
+<p>This will make about 6 waffles.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pickled-jalapenos"><a class="header" href="#pickled-jalapenos">Pickled Jalapenos</a></h1>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="ingredients-5"><a class="header" href="#ingredients-5">Ingredients</a></h2>
+<ul>
+<li>7 green jalapenos</li>
+<li>1 red jalapeno</li>
+<li>couple of pieces of white onion (optional)</li>
+<li>couple of peeled and smashed cloves of garlic</li>
+<li>1 cup water</li>
+<li>1 cup white vinegar</li>
+<li>1 Tablespoon salt</li>
+</ul>
+<h2 id="instructions-6"><a class="header" href="#instructions-6">Instructions</a></h2>
+<ul>
+<li>Slice peppers and put into mason jar</li>
+<li>Bring water and vinegar to a boil</li>
+<li>Add salt</li>
+<li>Pour into mason jar</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wilted-slaw"><a class="header" href="#wilted-slaw">Wilted Slaw</a></h1>
+<h2 id="ingredients-6"><a class="header" href="#ingredients-6">Ingredients</a></h2>
+<ul>
+<li>1 medium napa cabbage</li>
+<li>4 pieces of bacon</li>
+<li>1/4 pound of walnut pieces</li>
+<li>1/2 cup Blue cheese</li>
+<li>1/8 cup White vinegar</li>
+</ul>
+<h2 id="instructions-7"><a class="header" href="#instructions-7">Instructions</a></h2>
+<ul>
+<li>Toast walnuts in oven at 350 for about 8 minutes</li>
+<li>Wash and cut cabagge, let dry while you do the rest</li>
+<li>Cut bacon into pieces, render the fat and get crispy.  Set aside.</li>
+<li>Filter the bacon grease to get pieces out of it</li>
+<li>Put grease back into wok</li>
+<li>Saute cabbage</li>
+<li>Pour in vinegar and cook for another 30 seconds</li>
+<li>Turn off heat, add bacon, walnuts and blue cheese.</li>
+<li>Serve immediately</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="howtos"><a class="header" href="#howtos">HOWTOs</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="maintain-this-book"><a class="header" href="#maintain-this-book">Maintain this book</a></h1>
 <p>This site (called a book) is generated by <a href="https://rust-lang.github.io/mdBook/index.html">mdBook</a>.  It is based on simple Markdown files and compiled by mdBook into a static website.</p>
