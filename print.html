@@ -38,11 +38,23 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -83,10 +95,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -120,7 +135,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -137,7 +152,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -229,7 +249,7 @@
 <li>Add sauce, cook until desired tenderness</li>
 <li>Add roughly chopped Thai basil</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chicken-fried-rice"><a class="header" href="#chicken-fried-rice">Chicken Fried Rice</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chicken-and-broth"><a class="header" href="#chicken-and-broth">Chicken and Broth</a></h1>
 <p><button id="cookMode" type="button">Activate Cook Mode</button></p>
 <script>
 	const cookMode = document.getElementById('cookMode');
@@ -269,17 +289,27 @@
 </script>
 <h2 id="ingredients-1"><a class="header" href="#ingredients-1">Ingredients</a></h2>
 <ul>
-<li></li>
-</ul>
-<h2 id="sauce-1"><a class="header" href="#sauce-1">Sauce</a></h2>
-<ul>
-<li></li>
+<li>entire chicken, medium size</li>
+<li>yellow onion</li>
+<li>carrot (1 large)</li>
+<li>celery (4 stalks)</li>
+<li>2 bay leaves</li>
+<li>salt and pepper</li>
 </ul>
 <h2 id="instructions-1"><a class="header" href="#instructions-1">Instructions</a></h2>
 <ul>
-<li></li>
+<li>Don't measure</li>
+<li>Take organs and next out of the chicken</li>
+<li>Halve onion, leave skin on</li>
+<li>Rough chop carrot, and celery</li>
+<li>Add all to pot of cold water</li>
+<li>Simmer until chicken is done</li>
+<li>Take chicken out and debone. Place bones back in pot.  Discard skin</li>
+<li>Save chicken for other stuff</li>
+<li>Simmer broth until you're ready to cook something with it</li>
+<li>Strain chunks out and discard</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="mexican-rice"><a class="header" href="#mexican-rice">Mexican Rice</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chicken-fried-rice"><a class="header" href="#chicken-fried-rice">Chicken Fried Rice</a></h1>
 <p><button id="cookMode" type="button">Activate Cook Mode</button></p>
 <script>
 	const cookMode = document.getElementById('cookMode');
@@ -319,6 +349,126 @@
 </script>
 <h2 id="ingredients-2"><a class="header" href="#ingredients-2">Ingredients</a></h2>
 <ul>
+<li></li>
+</ul>
+<h2 id="sauce-1"><a class="header" href="#sauce-1">Sauce</a></h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="instructions-2"><a class="header" href="#instructions-2">Instructions</a></h2>
+<ul>
+<li></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="chicken-spaghetti"><a class="header" href="#chicken-spaghetti">Chicken Spaghetti</a></h1>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="ingredients-3"><a class="header" href="#ingredients-3">Ingredients</a></h2>
+<ul>
+<li>3 cup <a href="recipes/chicken-broth.html">cooked chicken breast</a> - best to make chicken/broth and use it</li>
+<li>8oz. cooked shaghetti</li>
+<li>Paprika, to sprinkle</li>
+<li>Parmesan, to sprinkle</li>
+<li>Fresh parsley (optional), chopped, to sprinkle</li>
+</ul>
+<h2 id="sauce-2"><a class="header" href="#sauce-2">Sauce</a></h2>
+<ul>
+<li>\( \frac{1}{4} \) cup butter</li>
+<li>\( \frac{1}{4} \) flour</li>
+<li>\( \frac{2}{3} \) <a href="recipes/chicken-broth.html">chicken broth</a></li>
+<li>\( \frac{1}{2} \) half and half</li>
+<li>\( \frac{1}{2} \) sour cream</li>
+<li>1 cup parmesan chees, grated</li>
+<li>\( \frac{1}{4} \) dry white wine, apple juice or white grape juice</li>
+<li>1-2 garlic cloves, minced</li>
+<li>1 teaspoon lemon juice</li>
+<li>\( \frac{1}{2} \) teaspoon dry mustard</li>
+<li>salt and pepper</li>
+</ul>
+<h2 id="instructions-3"><a class="header" href="#instructions-3">Instructions</a></h2>
+<ul>
+<li>Melt butter in sauce pan and add flour, stir constantly</li>
+<li>When it thickens add the rest of the sauce ingredients (chicken broth, half and half, sour cream, parmesan cheese, wine, garlic, lemon juice, dry mustard, salt and pepper)</li>
+<li>Add chicken and noodles</li>
+<li>Stir well</li>
+<li>Place in baking dish and sprinkle with paprika and extra parmesan</li>
+<li>Bake at 350° for ~30min</li>
+<li>Optional, sprinkle with fresh parsley and server</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mexican-rice"><a class="header" href="#mexican-rice">Mexican Rice</a></h1>
+<p><button id="cookMode" type="button">Activate Cook Mode</button></p>
+<script>
+	const cookMode = document.getElementById('cookMode');
+	let wakeLock = null;
+
+	async function toggleCookMode() {
+		if (!wakeLock)
+		{
+			try
+			{
+				// Request Wake Lock
+				wakeLock = await navigator.wakeLock.request('screen');
+				cookMode.textContent = 'Deactivate Cook Mode';
+			}
+			catch (err)
+			{
+				console.error(`Wake Lock failed: ${err.name}, ${err.message}`);
+			}
+		}
+		else
+		{
+			// Release Wake Lock
+			wakeLock.release();
+			wakeLock = null;
+			cookMode.textContent = 'Activate Cook Mode';
+		}
+	}
+
+	if (window.location.href.includes("recipes"))
+	{
+		cookMode.addEventListener('click', toggleCookMode);
+	} 
+	else
+	{
+		cookMode.style.display = "none";
+	}
+</script>
+<h2 id="ingredients-4"><a class="header" href="#ingredients-4">Ingredients</a></h2>
+<ul>
 <li>2 cups of rice</li>
 <li>\( \frac{1}{2} \) diced white onion</li>
 <li>\( \frac{1}{2} \) teaspoon garlic powder</li>
@@ -328,7 +478,7 @@
 <li>3 cups of water (adjust based on rice's instructions)</li>
 <li>Optional: frozen peas, carrots, corn, etc... about 1 cup</li>
 </ul>
-<h2 id="instructions-2"><a class="header" href="#instructions-2">Instructions</a></h2>
+<h2 id="instructions-4"><a class="header" href="#instructions-4">Instructions</a></h2>
 <ul>
 <li>Brown rice in a little bit of oil</li>
 <li>Add everything else</li>
@@ -374,7 +524,7 @@
 		cookMode.style.display = "none";
 	}
 </script>
-<h2 id="ingredients-3"><a class="header" href="#ingredients-3">Ingredients</a></h2>
+<h2 id="ingredients-5"><a class="header" href="#ingredients-5">Ingredients</a></h2>
 <ul>
 <li>Pork loin, chops, it doesn't matter</li>
 </ul>
@@ -386,7 +536,7 @@
 <li>1 Teaspoon paprika</li>
 <li>1 Teaspoon thyme</li>
 </ul>
-<h2 id="sauce-2"><a class="header" href="#sauce-2">Sauce</a></h2>
+<h2 id="sauce-3"><a class="header" href="#sauce-3">Sauce</a></h2>
 <ul>
 <li>\( \frac{1}{2} \) cup Duke's Mayo</li>
 <li>2 Tablespoons fresh lemon juice</li>
@@ -394,7 +544,7 @@
 <li>\( \frac{1}{2} \) Teaspoon kosher salt</li>
 <li>\( \frac{1}{4} \) Teaspoon ground black pepper</li>
 </ul>
-<h2 id="instructions-3"><a class="header" href="#instructions-3">Instructions</a></h2>
+<h2 id="instructions-5"><a class="header" href="#instructions-5">Instructions</a></h2>
 <ul>
 <li>Season meat ahead of time, apply sauce while grilling pork</li>
 </ul>
@@ -436,20 +586,20 @@
 		cookMode.style.display = "none";
 	}
 </script>
-<h2 id="ingredients-4"><a class="header" href="#ingredients-4">Ingredients</a></h2>
+<h2 id="ingredients-6"><a class="header" href="#ingredients-6">Ingredients</a></h2>
 <ul>
 <li>1 Tablespoon oil</li>
 <li>4 pieces of bacon diced</li>
-<li>1/2 sweet onion diced</li>
+<li>\( \frac{1}{2} \ sweet onion diced</li>
 <li>3 gloved mined garlic</li>
 <li>2 large bunches of collard greens</li>
 <li>2 cups of chicken stock</li>
-<li>1/2 Teaspoon salt</li>
-<li>1/4 Teaspoon pepper</li>
+<li>\( \frac{1}{2} \ Teaspoon salt</li>
+<li>\( \frac{1}{4} \ Teaspoon pepper</li>
 <li>1-2 Teaspoon red pepper flakes</li>
 <li>2 Teaspoons apple cider vinegar</li>
 </ul>
-<h2 id="instructions-4"><a class="header" href="#instructions-4">Instructions</a></h2>
+<h2 id="instructions-6"><a class="header" href="#instructions-6">Instructions</a></h2>
 <ul>
 <li>Wash and cut collards into 1" strips.  Remove largest parts of stem.</li>
 <li>Render bacon, set aside.</li>
@@ -511,7 +661,7 @@
 <li>1/3 cup melted butter</li>
 <li>1 Teaspoon vanilla extract</li>
 </ul>
-<h2 id="instructions-5"><a class="header" href="#instructions-5">Instructions</a></h2>
+<h2 id="instructions-7"><a class="header" href="#instructions-7">Instructions</a></h2>
 <ul>
 <li>Combine wet ingredients, whisk to scramble the eggs</li>
 <li>Combine dry ingredients, stir</li>
@@ -556,7 +706,7 @@
 		cookMode.style.display = "none";
 	}
 </script>
-<h2 id="ingredients-5"><a class="header" href="#ingredients-5">Ingredients</a></h2>
+<h2 id="ingredients-7"><a class="header" href="#ingredients-7">Ingredients</a></h2>
 <ul>
 <li>7 green jalapenos</li>
 <li>1 red jalapeno</li>
@@ -566,7 +716,7 @@
 <li>1 cup white vinegar</li>
 <li>1 Tablespoon salt</li>
 </ul>
-<h2 id="instructions-6"><a class="header" href="#instructions-6">Instructions</a></h2>
+<h2 id="instructions-8"><a class="header" href="#instructions-8">Instructions</a></h2>
 <ul>
 <li>Slice peppers and put into mason jar</li>
 <li>Bring water and vinegar to a boil</li>
@@ -574,7 +724,7 @@
 <li>Pour into mason jar</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="wilted-slaw"><a class="header" href="#wilted-slaw">Wilted Slaw</a></h1>
-<h2 id="ingredients-6"><a class="header" href="#ingredients-6">Ingredients</a></h2>
+<h2 id="ingredients-8"><a class="header" href="#ingredients-8">Ingredients</a></h2>
 <ul>
 <li>1 medium napa cabbage</li>
 <li>4 pieces of bacon</li>
@@ -582,7 +732,7 @@
 <li>1/2 cup Blue cheese</li>
 <li>1/8 cup White vinegar</li>
 </ul>
-<h2 id="instructions-7"><a class="header" href="#instructions-7">Instructions</a></h2>
+<h2 id="instructions-9"><a class="header" href="#instructions-9">Instructions</a></h2>
 <ul>
 <li>Toast walnuts in oven at 350 for about 8 minutes</li>
 <li>Wash and cut cabagge, let dry while you do the rest</li>
@@ -666,6 +816,7 @@
             });
         });
         </script>
+
 
     </div>
     </body>
