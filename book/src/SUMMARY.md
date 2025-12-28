@@ -4,7 +4,7 @@
 - [Recipes](recipes/README.md)
     - [Amazing Green Beans - Pad Kra Pao](recipes/amazing-green-beans.md)
     - [Chicken and Broth](recipes/chicken-broth.md)
-    - [Chicken Fried Rice](recipes/chicken-fried-rice.md)
+    - [Chicken Fried Rice - Hibachi Style](recipes/chicken-fried-rice-hibachi-style.md)
     - [Chicken Spaghetti](recipes/chicken-spaghetti.md)
     - [Collard Greens](recipes/collard-greens.md)
     - [Hot and Sour Soup](recipes/hot-and-sour-soup.md)

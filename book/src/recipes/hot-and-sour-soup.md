@@ -2,7 +2,7 @@
 
 There are a lot of varieties of this soup on the internet.  This recipe is a little sweeter than others.  I added more vinegar than it calls for. I used vegetable oil, white mushrooms, no bell peppers when I made it. That's what I had around.
 
-* <https://www.madewithlau.com/recipes/hot-sour-soup/>
+<https://www.madewithlau.com/recipes/hot-sour-soup/>
 
 {{#include cook-mode.md}}
 
