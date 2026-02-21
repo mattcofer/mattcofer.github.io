@@ -13,10 +13,10 @@
 
 ## Sauce
 * \\( \frac{1}{4} \\) cup butter
-* \\( \frac{1}{4} \\) flour
-* \\( \frac{2}{3} \\) [chicken broth](chicken-broth.md)
-* \\( \frac{1}{2} \\) half and half
-* \\( \frac{1}{2} \\) sour cream
+* \\( \frac{1}{4} \\) cup flour
+* \\( \frac{2}{3} \\) cup [chicken broth](chicken-broth.md)
+* \\( \frac{1}{2} \\) cup half and half
+* \\( \frac{1}{2} \\) cup sour cream
 * 1 cup parmesan chees, grated
 * \\( \frac{1}{4} \\) dry white wine, apple juice or white grape juice
 * 1-2 garlic cloves, minced
