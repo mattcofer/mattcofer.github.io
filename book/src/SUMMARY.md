@@ -7,6 +7,7 @@
     - [Chicken Fried Rice - Hibachi Style](recipes/chicken-fried-rice-hibachi-style.md)
     - [Chicken Spaghetti](recipes/chicken-spaghetti.md)
     - [Collard Greens](recipes/collard-greens.md)
+    - [Drunken Noodles - Pad Kee Mao](recipes/drunken-noodles.md)
     - [Hot and Sour Soup](recipes/hot-and-sour-soup.md)
     - [Mexican Rice](recipes/mexican-rice.md)
     - [Pickled Jalapenos](recipes/pickled-jalapenos.md)
@@ -16,4 +17,4 @@
 - [HOWTOs](how-to/README.md)
     - [Maintain this book](how-to/maintain-this-book.md)
 - [Weather](weather/README.md)
-    - [Current Conditions](weather/currnet-conditions.md)
+    - [Current Conditions](weather/current-conditions.md)

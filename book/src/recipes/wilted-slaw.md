@@ -1,5 +1,7 @@
 # Wilted Slaw
 
+{{#include cook-mode.md}}
+
 ## Ingredients
 * 1 medium napa cabbage
 * 4 pieces of bacon
