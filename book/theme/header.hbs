@@ -1,0 +1,66 @@
+<link rel="manifest" href="{{ path_to_root }}manifest.json">
+<meta name="theme-color" content="#1e2227">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Matt Cofer">
+<link rel="apple-touch-icon" href="{{ path_to_root }}icon-192.png">
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('{{ path_to_root }}sw.js', { scope: '{{ path_to_root }}' })
+      .catch(err => console.error('ServiceWorker registration failed:', err));
+  });
+}
+
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallButton();
+});
+
+function showInstallButton() {
+  const btn = document.getElementById('pwaInstallBtn');
+  if (btn) {
+    btn.style.display = 'inline-block';
+  }
+}
+
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted PWA installation');
+      }
+      deferredPrompt = null;
+      const btn = document.getElementById('pwaInstallBtn');
+      if (btn) btn.style.display = 'none';
+    });
+  } else {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+      alert("To install on iOS:\nTap the Share button ⎋ in Safari, then select 'Add to Home Screen'.");
+    } else {
+      alert("To install on Android / Desktop:\nTap your browser menu (⋮ or ⋯) and choose 'Install App' or 'Add to Home screen'.");
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rightButtons = document.querySelector('.right-buttons');
+  if (rightButtons && !document.getElementById('pwaInstallBtn')) {
+    const installBtn = document.createElement('button');
+    installBtn.id = 'pwaInstallBtn';
+    installBtn.className = 'icon-button';
+    installBtn.title = 'Install App';
+    installBtn.setAttribute('aria-label', 'Install App');
+    installBtn.innerHTML = '<span style="font-size: 0.95em;">📲</span>';
+    installBtn.style.cursor = 'pointer';
+    installBtn.onclick = installPWA;
+    rightButtons.prepend(installBtn);
+  }
+});
+</script>
