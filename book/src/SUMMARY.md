@@ -3,6 +3,7 @@
 [Home](README.md)
 - [Recipes](recipes/README.md)
     - [Amazing Green Beans - Pad Kra Pao](recipes/amazing-green-beans.md)
+    - [Asian Peanut Chicken Bowl](recipes/asian-peanut-chicken-bowl.md)
     - [Chicken and Broth](recipes/chicken-broth.md)
     - [Chicken Fried Rice - Hibachi Style](recipes/chicken-fried-rice-hibachi-style.md)
     - [Chicken Spaghetti](recipes/chicken-spaghetti.md)
