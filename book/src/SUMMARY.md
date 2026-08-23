@@ -18,4 +18,3 @@
 - [HOWTOs](how-to/README.md)
     - [Maintain this book](how-to/maintain-this-book.md)
 - [Weather](weather/README.md)
-    - [Current Conditions](weather/current-conditions.md)
