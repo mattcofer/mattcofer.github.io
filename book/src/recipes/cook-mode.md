@@ -1,32 +1,23 @@
-<div class="cook-mode-container" style="margin: 0.5em 0;">
-	<button type="button" class="cook-mode-btn" aria-live="polite">Activate Cook Mode</button>
-	<span class="cook-mode-status" style="margin-left: 8px; font-size: 0.9em; opacity: 0.85;"></span>
-</div>
+<button id="cookMode" type="button" class="cook-mode-btn" aria-live="polite">Activate Cook Mode</button>
+<span id="cookModeStatus" class="cook-mode-status" style="margin-left: 8px; font-size: 0.9em; opacity: 0.85;"></span>
+
 <script>
 (function() {
 	const scriptEl = document.currentScript;
-	const container = scriptEl ? scriptEl.previousElementSibling : null;
-	if (!container) return;
-
-	const cookMode = container.querySelector('.cook-mode-btn');
-	const statusEl = container.querySelector('.cook-mode-status');
-
-	if (!document.getElementById('cookMode') && cookMode) {
-		cookMode.id = 'cookMode';
-	}
-	if (!document.getElementById('cookModeStatus') && statusEl) {
-		statusEl.id = 'cookModeStatus';
-	}
+	const prev = scriptEl ? scriptEl.previousElementSibling : null;
+	const cookMode = (prev && prev.querySelector('.cook-mode-btn')) || document.getElementById('cookMode');
+	const statusEl = (prev && prev.querySelector('.cook-mode-status')) || document.getElementById('cookModeStatus');
 
 	if (!document.getElementById('cookModePrintStyle')) {
 		const style = document.createElement('style');
 		style.id = 'cookModePrintStyle';
-		style.textContent = '@media print { .cook-mode-container { display: none !important; } }';
+		style.textContent = '@media print { .cook-mode-btn, .cook-mode-status { display: none !important; } }';
 		document.head.appendChild(style);
 	}
 
 	if (!window.location.href.includes("recipes")) {
-		container.style.display = "none";
+		if (cookMode) cookMode.style.display = "none";
+		if (statusEl) statusEl.style.display = "none";
 		return;
 	}
 
