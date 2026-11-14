@@ -9,7 +9,7 @@
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('{{ path_to_root }}sw.js', { scope: '{{ path_to_root }}' })
+    navigator.serviceWorker.register('{{ path_to_root }}sw.js')
       .catch(err => console.error('ServiceWorker registration failed:', err));
   });
 }
@@ -56,7 +56,7 @@ function installPWA() {
     if (isIOS) {
       alert("To install on iOS:\nTap the Share button ⎋ in Safari, then select 'Add to Home Screen'.");
     } else {
-      alert("To install on Android / Desktop:\nTap your browser menu (⋮ or ⋯) and choose 'Install App' or 'Add to Home screen'.");
+      alert("To install on Android / Desktop:\nTap your browser menu (⋮ or ⋯) and choose 'Install app' or 'Add to Home screen'.");
     }
   }
 }

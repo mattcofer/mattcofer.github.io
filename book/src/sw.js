@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mattcofer-recipes-v3';
+const CACHE_NAME = 'mattcofer-recipes-v4';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
