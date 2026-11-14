@@ -5,7 +5,7 @@
 ## Ingredients
 
 * 3 cup [cooked chicken breast](chicken-broth.md) - best to make chicken/broth and use it
-* 8oz. cooked shaghetti
+* 8oz. cooked spaghetti
 * Paprika, to sprinkle
 * Parmesan, to sprinkle
 * Chili powder, to sprinkle (to taste)
@@ -17,7 +17,7 @@
 * \\( \frac{2}{3} \\) cup [chicken broth](chicken-broth.md)
 * \\( \frac{1}{2} \\) cup half and half
 * \\( \frac{1}{2} \\) cup sour cream
-* 1 cup parmesan chees, grated
+* 1 cup parmesan cheese, grated
 * \\( \frac{1}{4} \\) dry white wine, apple juice or white grape juice
 * 1-2 garlic cloves, minced
 * 1 teaspoon lemon juice
@@ -31,4 +31,4 @@
 * Stir well
 * Place in baking dish and sprinkle with paprika and extra parmesan
 * Bake at 350° for ~30min
-* Optional, sprinkle with fresh parsley and server
+* Optional, sprinkle with fresh parsley and serve

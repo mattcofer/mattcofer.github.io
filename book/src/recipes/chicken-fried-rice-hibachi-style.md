@@ -16,7 +16,7 @@ Note: this makes two servings
 * 2 tablespoons green onion
 * 2 teaspoons sesame seed
 * 2 teaspoons soy sauce
-* Optionally, other Hibachi style vegetables like zuchini, green cabbage
+* Optionally, other Hibachi style vegetables like zucchini, green cabbage
 
 ## Garlic Butter Ingredients and Process
 * 4 tablespoons of soft butter

@@ -1,5 +1,5 @@
 # Amazing Green Beans - Pad Kra Pao
-This was orginally inspired by the dish called Amazing Green Beans at Madam Mams in Austin, Texas.  Traditionally, it is called Pad Kra Pao.  There are a few variations found on the web.  Here are some.  This recipe is mostly based on the first one.
+This was originally inspired by the dish called Amazing Green Beans at Madam Mams in Austin, Texas.  Traditionally, it is called Pad Kra Pao.  There are a few variations found on the web.  Here are some.  This recipe is mostly based on the first one.
 * <https://hot-thai-kitchen.com/holy-basil-stir-fry/>
 * <https://hot-thai-kitchen.com/pad-kra-pao-beef/#recipe>
 * <https://thewoksoflife.com/pad-kra-pao/#recipe>
@@ -18,7 +18,7 @@ This was orginally inspired by the dish called Amazing Green Beans at Madam Mams
 * 1 Tablespoon Oyster Sauce
 * 1 Tablespoon Thin or Light Soy Sauce
 * 2 Teaspoons Fish Sauce
-* 1 1/2 Teaspoon Black Soy Sauce
+* 1 \\( \frac{1}{2} \\) Teaspoon Black Soy Sauce
 * 2 Teaspoons Sugar
 * 2 Tablespoons water
 

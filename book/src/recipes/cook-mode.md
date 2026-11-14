@@ -1,16 +1,32 @@
-<button id="cookMode" type="button" aria-live="polite">Activate Cook Mode</button>
-<span id="cookModeStatus" style="margin-left: 8px; font-size: 0.9em; opacity: 0.85;"></span>
-
+<div class="cook-mode-container" style="margin: 0.5em 0;">
+	<button type="button" class="cook-mode-btn" aria-live="polite">Activate Cook Mode</button>
+	<span class="cook-mode-status" style="margin-left: 8px; font-size: 0.9em; opacity: 0.85;"></span>
+</div>
 <script>
 (function() {
-	const cookMode = document.getElementById('cookMode');
-	const statusEl = document.getElementById('cookModeStatus');
-	let wakeLock = null;
-	let isCookModeActive = false;
+	const scriptEl = document.currentScript;
+	const container = scriptEl ? scriptEl.previousElementSibling : null;
+	if (!container) return;
+
+	const cookMode = container.querySelector('.cook-mode-btn');
+	const statusEl = container.querySelector('.cook-mode-status');
+
+	if (!document.getElementById('cookMode') && cookMode) {
+		cookMode.id = 'cookMode';
+	}
+	if (!document.getElementById('cookModeStatus') && statusEl) {
+		statusEl.id = 'cookModeStatus';
+	}
+
+	if (!document.getElementById('cookModePrintStyle')) {
+		const style = document.createElement('style');
+		style.id = 'cookModePrintStyle';
+		style.textContent = '@media print { .cook-mode-container { display: none !important; } }';
+		document.head.appendChild(style);
+	}
 
 	if (!window.location.href.includes("recipes")) {
-		if (cookMode) cookMode.style.display = "none";
-		if (statusEl) statusEl.style.display = "none";
+		container.style.display = "none";
 		return;
 	}
 
@@ -22,6 +38,9 @@
 		if (statusEl) statusEl.textContent = '(Screen Wake Lock API not supported in this browser)';
 		return;
 	}
+
+	let wakeLock = null;
+	let isCookModeActive = false;
 
 	async function requestWakeLock() {
 		try {

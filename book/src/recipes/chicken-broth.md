@@ -13,7 +13,7 @@
 
 ## Instructions
 * Don't measure
-* Take organs and next out of the chicken
+* Take organs and neck out of the chicken
 * Halve onion, leave skin on
 * Rough chop carrot, and celery
 * Add all to pot of cold water

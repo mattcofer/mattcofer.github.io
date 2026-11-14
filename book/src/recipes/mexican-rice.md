@@ -7,7 +7,7 @@
 * \\( \frac{1}{2} \\) diced white onion
 * \\( \frac{1}{2} \\) teaspoon garlic powder
 * \\( \frac{1}{2} \\) teaspoon cumin
-* \\( 1\frac{1}{2} \\) tabslespoons salt
+* \\( 1\frac{1}{2} \\) tablespoons salt
 * \\( \frac{1}{2} \\) can of tomato sauce
 * 3 cups of water (adjust based on rice's instructions)
 * Optional: frozen peas, carrots, corn, etc... about 1 cup

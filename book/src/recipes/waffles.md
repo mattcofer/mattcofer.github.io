@@ -11,8 +11,8 @@
 
 ## Wet Ingredients
 * 2 large eggs
-* 1 1/2 cup warm milk
-* 1/3 cup melted butter
+* 1 \\( \frac{1}{2} \\) cup warm milk
+* \\( \frac{1}{3} \\) cup melted butter
 * 1 Teaspoon vanilla extract
 
 ## Instructions
