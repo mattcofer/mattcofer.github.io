@@ -12,6 +12,7 @@
     - [Drunken Noodles - Pad Kee Mao](recipes/drunken-noodles.md)
     - [Hot and Sour Soup](recipes/hot-and-sour-soup.md)
     - [Mexican Rice](recipes/mexican-rice.md)
+    - [Pearl Couscous with Chicken and Peas](recipes/pearl-couscous-with-chicken-and-peas.md)
     - [Pickled Jalapenos](recipes/pickled-jalapenos.md)
     - [Waffles](recipes/waffles.md)
     - [White BBQ Pork](recipes/white-bbq-pork.md)
