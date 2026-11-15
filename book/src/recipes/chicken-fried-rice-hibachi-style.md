@@ -1,6 +1,6 @@
 # Chicken Fried Rice - Hibachi Style
 
-This recipe was mostly inspired by <a href="https://www.youtube.com/watch?v=5ZH43ej3wys" target="_blank">this hibachi fried rice video</a>.
+This recipe was mostly inspired by <a href="https://www.youtube.com/watch?v=5ZH43ej3wys" target="_blank" rel="noopener noreferrer">this hibachi fried rice video</a>.
 
 {{#include cook-mode.md}}
 

@@ -29,6 +29,7 @@ Drunken Noodles, or Pad Kee Mao, is a popular Thai rice noodle stir-fry with chi
 ### Aromatics & Vegetables
 * 3 tablespoons vegetable or canola oil (divided)
 * 5 cloves garlic (sliced)
+* 2 to 6 Thai bird chilies (bruised and roughly chopped, optional)
 * \\( \frac{1}{2} \\) white onion (sliced)
 * 8 oz white mushroom (sliced)
 * 1 cup holy basil or Thai basil (loosely packed)
@@ -40,8 +41,8 @@ Drunken Noodles, or Pad Kee Mao, is a popular Thai rice noodle stir-fry with chi
 * Stir together the dissolved brown sugar mixture, soy sauces, fish sauce, oyster sauce, and white pepper in a small bowl and set aside.
 * Heat your wok until close to smoking, and spread 2 tablespoons of oil around the perimeter. Add the chicken and sear for 1 minute on each side until cooked. Remove from the wok and set aside. (If anything stuck to the wok, clean it so the rice noodles don't stick).
 * With the wok on high heat, add 1 tablespoon of oil along with the white onion, and mushroom.
-* Add garlic until fragrant.
+* Add garlic (and chilies, if using) and stir-fry until fragrant.
 * Add Shaoxing wine and stir-fry for 10 seconds.
 * Add the noodles. Stir-fry for 1 minute until the noodles warm up.
 * Add the prepared sauce mixture and stir-fry at the highest heat for about 1 minute until the noodles are uniform in color (scrape the bottom of the wok with a spatula to prevent sticking).
-* Add the seared chicken back in, stir-fry for another 1 to 2 minutes, and serve!
+* Add the seared chicken and holy/Thai basil back in, stir-fry for another 1 to 2 minutes until the basil is wilted, and serve!

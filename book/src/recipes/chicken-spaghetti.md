@@ -18,7 +18,7 @@
 * \\( \frac{1}{2} \\) cup half and half
 * \\( \frac{1}{2} \\) cup sour cream
 * 1 cup parmesan cheese, grated
-* \\( \frac{1}{4} \\) dry white wine, apple juice or white grape juice
+* \\( \frac{1}{4} \\) cup dry white wine, apple juice or white grape juice
 * 1-2 garlic cloves, minced
 * 1 teaspoon lemon juice
 * \\( \frac{1}{2} \\) teaspoon dry mustard
