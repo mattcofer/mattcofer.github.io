@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mattcofer-recipes-v6';
+const CACHE_NAME = 'mattcofer-recipes-v7';
 
 function isCacheableResponse(response) {
   return (
